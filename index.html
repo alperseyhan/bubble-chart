@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Chart Seçici</title>
+    <style>
+        .button-container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #chart {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button id="dataset1">Veri Seti 1</button>
+        <button id="dataset2">Veri Seti 2</button>
+        <button id="dataset3">Veri Seti 3</button>
+    </div>
+    <div id="chart"></div>
+    <script type="module" src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', () => {
+                    window.chartApp.showChart(button.id);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
